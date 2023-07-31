@@ -1,4 +1,4 @@
-// 100Devs Agency OOP 
+// 100Devs Agency OOP
 class Company {
   constructor(co, biz, employeeCt) {
     this._co = co;
@@ -91,68 +91,74 @@ class Teammember {
     return `${this.tmName}, a ${this.tmTitle} specializes within the ${this.techStack} stack.`;
   }
 }
-
 //build company
-const h1 = document.querySelector("h1");
-const companyDesc = document.querySelector(".company");
-const company = new Company("100Devs Agency", "Tech", 500);
-h1.textContent = company.co;
-companyDesc.textContent = company.coIntro();
-
-//frontend
-const frontDesc = document.querySelector(".frontDesc");
-const frontDir = document.querySelector(".frontMgrs");
-const frontS = document.querySelector(".frontStaff");
-
-const front = new Team(
-  "100Devs Agency",
-  "Frontend",
-  25,
-  "Customer Facing UI/UX -Architecture to maintenance"
-);
-const mary = new TeamMgr(
-  "100Devs Agency",
-  "Frontend",
-  15,
-  "Customer Facing UI/UX -Architecture to maintenance",
-  "Mary -the Machine- Mayhem",
-  "Director of UI Services"
-);
-const tom = new Teammember(
-  "Tom da Bomb",
-  "UI Software Engineer",
-  "Figma, ReactJS, Javascript, CSS, and HTML"
-);
-
-frontDesc.textContent = front.teamDesc();
-frontDir.textContent = mary.managerDesc();
-frontS.textContent = tom.tmDesc();
+function companyDisplay() {
+  const h1 = document.querySelector("h1");
+  const companyDesc = document.querySelector(".company");
+  const company = new Company("100Devs Agency", "Tech", 500);
+  h1.textContent = company.co;
+  companyDesc.textContent = company.coIntro();
+}
+//director Front
+function frontendDisplay() {
+  const frontDesc = document.querySelector(".frontDesc");
+  const frontDir = document.querySelector(".frontMgrs");
+  const frontS = document.querySelector(".frontStaff");
+  const front = new Team(
+    "100Devs Agency",
+    "Frontend",
+    25,
+    "Customer Facing UI/UX -Architecture to maintenance"
+  );
+  const mary = new TeamMgr(
+    "100Devs Agency",
+    "Frontend",
+    15,
+    "Customer Facing UI/UX -Architecture to maintenance",
+    "Mary -the Machine- Mayhem",
+    "Director of UI Services"
+  );
+  const tom = new Teammember(
+    "Tom da Bomb",
+    "UI Software Engineer",
+    "Figma, ReactJS, Javascript, CSS, and HTML"
+  );
+  frontDesc.textContent = front.teamDesc();
+  frontDir.textContent = mary.managerDesc();
+  frontS.textContent = tom.tmDesc();
+}
 
 //backend
-const backDesc = document.querySelector(".backDesc");
-const backDir = document.querySelector(".backMgrs");
-const backS = document.querySelector(".backStaff");
+function backendDisplay() {
+  const backDesc = document.querySelector(".backDesc");
+  const backDir = document.querySelector(".backMgrs");
+  const backS = document.querySelector(".backStaff");
 
-const back = new Team(
-  "100Devs Agency",
-  "Backend",
-  20,
-  "Servers, Databases, Cloud Services -Architecture to maintenance"
-);
-const john = new TeamMgr(
-  "100Devs Agency",
-  "Backend",
-  11,
-  "Internal: Servers, Databases, Cloud Services -Architecture to maintenance",
-  "John -the Shining Knight- Lawson",
-  "Director of External Infrastructure and Cloud Services"
-);
-const barry = new Teammember(
-  "Barry White",
-  "Cloud Services Engineer I",
-  "MERN, Azure, AWS"
-);
+  const back = new Team(
+    "100Devs Agency",
+    "Backend",
+    20,
+    "Servers, Databases, Cloud Services -Architecture to maintenance"
+  );
+  const john = new TeamMgr(
+    "100Devs Agency",
+    "Backend",
+    11,
+    "Internal: Servers, Databases, Cloud Services -Architecture to maintenance",
+    "John -the Shining Knight- Lawson",
+    "Director of External Infrastructure and Cloud Services"
+  );
+  const barry = new Teammember(
+    "Barry White",
+    "Cloud Services Engineer I",
+    "MERN, Azure, AWS"
+  );
 
-backDesc.textContent = back.teamDesc();
-backDir.textContent = john.managerDesc();
-backS.textContent = barry.tmDesc();
+  backDesc.textContent = back.teamDesc();
+  backDir.textContent = john.managerDesc();
+  backS.textContent = barry.tmDesc();
+}
+
+companyDisplay();
+frontendDisplay();
+backendDisplay();
